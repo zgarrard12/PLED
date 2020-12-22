@@ -86,10 +86,10 @@ namespace IngestImage
                             int grayScale = (int)((oc.R * 0.3) + (oc.G * 0.59) + (oc.B * 0.11));
                     
                             //truncate to 8 shades
-                            grayScale = grayScale / 32;
+                            //grayScale = grayScale / 32;    //256 test edit
                     
                             //move back to being in increments of 32 - creates better variance in shades
-                            grayScale = grayScale * 32;
+                            //grayScale = grayScale * 32;//256 test edit
 
                             //set new pixel to grayscale
                             Color nc = Color.FromArgb(oc.A, grayScale, grayScale, grayScale);
@@ -100,8 +100,24 @@ namespace IngestImage
                             //G-Code to move to next pixel
                             sw.WriteLine("G01 X" + (column + xLocation) + " Y" + (row + yLocation));
 
+                            if (grayScale<10)
+                            {
+                                //G-Code to set intensity of laser
+                                sw.WriteLine("S00" + grayScale);  //256 test edit
+                            }
+                            else if (grayScale>9 && grayScale<100)
+                            {
+                                //G-Code to set intensity of laser
+                                sw.WriteLine("S0" + grayScale);  //256 test edit
+                            }
+                            else
+                            {
+                                //G-Code to set intensity of laser
+                                sw.WriteLine("S" + grayScale);  //256 test edit
+                            }
                             //G-Code to set intensity of laser
-                            sw.WriteLine("S" + grayScale / 32);
+                            //sw.WriteLine("S" + grayScale / 32);  //256 test edit
+                            //sw.WriteLine("S" + grayScale);
 
                             //G-Code to turn on laser
                             sw.WriteLine("M04");

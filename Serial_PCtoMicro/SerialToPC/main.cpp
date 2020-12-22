@@ -15,6 +15,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <bitset>
 
 #define G0 0x4730
 #define G1 0x4731
@@ -175,9 +176,9 @@ int main(){
 				serial.SendData(buffer, 2);
 				//	G4, Pinit
 				splitShort(g4, shortMSB, shortLSB, buffer);
-				serial.SendData(buffer, 2);
+				//serial.SendData(buffer, 2);
 				splitShort(pInit, shortMSB, shortLSB, buffer);
-				serial.SendData(buffer, 2);
+				//serial.SendData(buffer, 2);
 			}
 
 			//----------------------------
@@ -225,10 +226,19 @@ bool getRowData(FILE *inFile, uint16_t xCoor[], uint16_t yCoor[], uint16_t gCode
 	uint8_t firstChar;
 	uint8_t secondChar;
 	uint8_t thirdChar;
-
+	uint16_t checker;
+	const char* input[3];
+	int ascii;
+	uint8_t awesome=0;
+	uint8_t temp;
+	int zephyr=0;
+	int remainder = 0;
 	uint8_t chG;
 	uint32_t iPix = 0;
 	uint32_t counter = 1;
+	long binary = 0, a = 1;
+	uint16_t *b;
+	char *byteptr = (char *)gCode;
 
 	for(int i = 0; i < (size * 5); i++){
 		
@@ -255,36 +265,28 @@ bool getRowData(FILE *inFile, uint16_t xCoor[], uint16_t yCoor[], uint16_t gCode
 				}
 				break;
 			case 'S':
-				secondChar = fgetc(inFile);
-				switch(secondChar){
-					case '0':
-						gCode[i] = S0;
-						break;
-					case '1':
-						gCode[i] = S1;
-						break;
-					case '2':
-						gCode[i] = S2;
-						break;
-					case '3':
-						gCode[i] = S3;
-						break;
-					case '4':
-						gCode[i] = S4;
-						break;
-					case '5':
-						gCode[i] = S5;
-						break;
-					case '6':
-						gCode[i] = S6;
-						break;
-					case '7':
-						gCode[i] = S7;
-						break;
-					default:
+				/*temp = fgetc(inFile);
+				temp = temp - '0';
+				zephyr = zephyr + temp*100;
+				temp = fgetc(inFile);
+				temp = temp - '0';
+				zephyr = zephyr + temp*10;
+				temp = fgetc(inFile);
+				temp = temp - '0';
+				zephyr = zephyr + temp;
+				secondChar = zephyr;
+				//memcpy(gCode, &secondChar, 1);*/
+				secondChar = 'S';
+				//memcpy(byteptr+1, &secondChar, 1);
+				fscanf(inFile, "%hd", &byteptr[2 * i]);
+				memcpy(&byteptr[2*i]+1, &secondChar, 1);
+				
+				
+						
+					/*default:
 						printf("Unkown S code \n");
-						break;
-				} //end of switch
+						break;*/
+				//} //end of switch
 				chG = fgetc(inFile);
 				break;
 			case 'M':
@@ -364,20 +366,24 @@ void sendRowData(uint16_t xCoor[], uint16_t yCoor[], uint16_t gCode[], uint16_t 
 		//  Gcode[i+2]	<--- M04
 		clearErrs();
 		splitShort(gCode[i+2], shortMSB, shortLSB, buffer);
-		serial.SendData(buffer, 2);
+		//serial.SendData(buffer, 2);
 		//	Gcode[i+3], P[iPix]	<--- G04 P#
 		clearErrs();
 		splitShort(gCode[i+3], shortMSB, shortLSB, buffer);
-		serial.SendData(buffer, 2);
+		//serial.SendData(buffer, 2);
 		clearErrs();
 		splitShort(pauseP[iPix], shortMSB, shortLSB, buffer);
-		serial.SendData(buffer, 2);
+		//serial.SendData(buffer, 2);
 		//	Gcode[i+4]	<--- M05
 		clearErrs();
 		splitShort(gCode[i+4], shortMSB, shortLSB, buffer);
-		serial.SendData(buffer, 2);
+		//serial.SendData(buffer, 2);
 
 		iPix++;
+		//if (iPix == 275)
+		//{
+		//	buffer[0] = 0;
+		//}
 	}
 	
 	//	RD when row has been sent

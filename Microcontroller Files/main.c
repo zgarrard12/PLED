@@ -26,8 +26,8 @@ volatile unsigned int *UART1=(unsigned int *) 0x4000D000; //This points to the b
 int timeEngrave=67;  //This is the denominator for the fraction of a second we are engraving during testing
 #define timeRest 0.5 //This is the denominator for the fraction of a second we rest between burns
 #define QEIMaxPosition 0xFFFFFFFF //This is the maximum count for the encoder(s) to accumulate pulses to.
-#define motorStepDuration 8	//This is the denominator for the fraction of a second we wait between sending stepper motor pulses
-#define pulsesPerPixel 12
+#define motorStepDuration 5  //8	//This is the denominator for the fraction of a second we wait between sending stepper motor pulses
+#define pulsesPerPixel 8 //12
 
 signed short positiveXPixels=0;	//This keeps track of where we think we are in the +X direction
 signed short positiveYPixels=0;	//This keeps track of where we think we are in the +Y direction
@@ -40,6 +40,11 @@ uint32_t tempPosition;
 short moveX;
 short moveY;
 short dwellTime;
+float burnTime;
+#define denom 255.0;
+short minBurnVal=1;	//2
+short maxBurnVal=479;	//13
+short difference;
 char numberOfRows=0;
 char firstRun=1;
 
@@ -69,16 +74,16 @@ char openLoopCountTrigger=0;
 int32_t mytest;
 uint32_t positionX;
 uint32_t positionY;
-short xCommands[1612];		//holds the desired x coordinates for an entire row
+short xCommands[2410];		//holds the desired x coordinates for an entire row 1612
 int xCommandsEnd;		//points to the end of the xCommand data
 int xCommandsIndex;		//points to the current x command to be moved to
-short yCommands[1612];		//holds the desired y coordinates for an entire row
+short yCommands[2410];		//holds the desired y coordinates for an entire row
 int yCommandsEnd;		//points to the end of the yCommand data
 int yCommandsIndex;		//points to the current y command to be moved to
-char gCode[16012];	//enough space to store 2 chars per gcode*(1600 gcodes possible per row + jog to home command + end of program/row command + initial G04 code)
+char gCode[16012];	//enough space to store 2 chars per gcode*(1600 gcodes possible per row + jog to home command + end of program/row command + initial G04 code)16012
 int gCodeEnd;		//points to the end of the gCode data
 int gCodeIndex=0;		//points to the current gCode to be excecuted
-short pauseValues[1612];	//holds the pause durations for the G04 Commands
+short pauseValues[10];	//holds the pause durations for the G04 Commands
 int pauseValuesEnd=0;	//points to the end of the pauseValues data
 int pauseValuesIndex=0; //points to the current pause time duration to dwell
 int pixelsCount=0;
@@ -87,6 +92,10 @@ int pixelCorrectX=0;
 
 short burnDurVal = 0;
 short zephyr=0;
+char firstBurnLine=0;	//This flag keeps track of the first line to implement the correction slope
+short yPulsesBurnedCount=1;	//Keeps track of the number of +y pulses moved after the first burned row. Every 24 pulses in the +y direction we compensate 1 pulse in the -x direction
+short correctionPulsesSent=0;	//Keeps track of the number of -x direction correction pulses sent
+short identifier1=0x0000;
 
 //*****************************************************************************
 //
@@ -106,21 +115,26 @@ UART1_Handler(void)
     UARTIntClear(UART1_BASE, ui32Status);
 		UARTRxErrorClear(UART1_BASE);
 		// Grab the first byte of the identifier that tells us what type of G Code instruction we are getting	
-	firstIdentifier:
+	//firstIdentifier:
 			temp=UARTCharGet(UART1_BASE);
-			if ((0xFF-temp)!=0)		//Remove potential null terminating characters
+			//if ((0xFF-temp)!=0)		//Remove potential null terminating characters
 				identifier[0]=temp;
-			else
-				goto firstIdentifier;
+			//else
+				//goto firstIdentifier;
 				//identifier[0]=UARTCharGetNonBlocking(UART1_BASE);
 			//	Grab the second part of the identifier
-	secondIdentifier:
+	//secondIdentifier:
 			temp=UARTCharGet(UART1_BASE);
-			if ((0xFF-temp)!=0)		//Remove potential null terminating characters
+			//if ((0xFF-temp)!=0)		//Remove potential null terminating characters
 				identifier[1]=temp;
-			else
-				goto secondIdentifier;
+			//else
+				//goto secondIdentifier;
 		//Put data in the appropriate arrays
+			identifier1=identifier[1];
+			if(gCodeEnd==0)
+			{
+				gCodeEnd=0;
+			}
 		if (identifier[0]=='Z' && identifier[1]=='Z')	//If we recieve the command to collect the size of the image...
 		{
 			size=0x00000000;
@@ -239,7 +253,7 @@ UART1_Handler(void)
 			return;
 		}	
 		
-		else if (identifier[0]=='S' && identifier[1]=='0')	//If we recieve the command to set the laser at full intensity...
+		else if (identifier[0]=='S' && (identifier1<256 && identifier1>=0))	//If we recieve the command to set the laser at a certain intensity...
 		{
 			gCode[gCodeEnd]=identifier[0];		//Store the first character of the G code
 			gCode[gCodeEnd+1]=identifier[1];	//Store the second character of the G code
@@ -247,61 +261,7 @@ UART1_Handler(void)
 			return;
 		}	
 		
-		else if (identifier[0]=='S' && identifier[1]=='1')	//If we recieve the command to set the laser 6/7 intensity...
-		{
-			gCode[gCodeEnd]=identifier[0];		//Store the first character of the G code
-			gCode[gCodeEnd+1]=identifier[1];	//Store the second character of the G code
-			gCodeEnd=gCodeEnd+2;		//move the index of the gCode buffer to point to one past the last entry
-			return;
-		}
-
-		else if (identifier[0]=='S' && identifier[1]=='2')	//If we recieve the command to set the laser at 5/7 intensity...
-		{
-			gCode[gCodeEnd]=identifier[0];		//Store the first character of the G code
-			gCode[gCodeEnd+1]=identifier[1];	//Store the second character of the G code
-			gCodeEnd=gCodeEnd+2;		//move the index of the gCode buffer to point to one past the last entry
-			return;
-		}	
-
-		else if (identifier[0]=='S' && identifier[1]=='3')	//If we recieve the command to set the laser at 4/7 intensity...
-		{
-			gCode[gCodeEnd]=identifier[0];		//Store the first character of the G code
-			gCode[gCodeEnd+1]=identifier[1];	//Store the second character of the G code
-			gCodeEnd=gCodeEnd+2;		//move the index of the gCode buffer to point to one past the last entry
-			return;
-		}	
-
-		else if (identifier[0]=='S' && identifier[1]=='4')	//If we recieve the command to set the laser at 3/7 intensity...
-		{
-			gCode[gCodeEnd]=identifier[0];		//Store the first character of the G code
-			gCode[gCodeEnd+1]=identifier[1];	//Store the second character of the G code
-			gCodeEnd=gCodeEnd+2;		//move the index of the gCode buffer to point to one past the last entry
-			return;
-		}			
 		
-		else if (identifier[0]=='S' && identifier[1]=='5')	//If we recieve the command to set the laser at 2/7 intensity...
-		{
-			gCode[gCodeEnd]=identifier[0];		//Store the first character of the G code
-			gCode[gCodeEnd+1]=identifier[1];	//Store the second character of the G code
-			gCodeEnd=gCodeEnd+2;		//move the index of the gCode buffer to point to one past the last entry
-			return;
-		}	
-		
-		else if (identifier[0]=='S' && identifier[1]=='6')	//If we recieve the command to set the laser at 1/7 intensity...
-		{
-			gCode[gCodeEnd]=identifier[0];		//Store the first character of the G code
-			gCode[gCodeEnd+1]=identifier[1];	//Store the second character of the G code
-			gCodeEnd=gCodeEnd+2;		//move the index of the gCode buffer to point to one past the last entry
-			return;
-		}	
-		
-		else if (identifier[0]=='S' && identifier[1]=='7')	//If we recieve the command to set the laser at no power...
-		{
-			gCode[gCodeEnd]=identifier[0];		//Store the first character of the G code
-			gCode[gCodeEnd+1]=identifier[1];	//Store the second character of the G code
-			gCodeEnd=gCodeEnd+2;		//move the index of the gCode buffer to point to one past the last entry
-			return;
-		}	
 		
 		else if (identifier[0]=='M' && identifier[1]=='2')		//If we recieve the command that the picture is complete...
 		{
@@ -710,6 +670,30 @@ void step(short curPosX,short curPosY,short desPosX,short desPosY, short burnDur
 					SysCtlDelay((int)((SysCtlClockGet()*burnDuration)/(6000*pulsesPerPixel)));	//pulse high for half the duration of 1/12th of the pixel width
 				else 
 					SysCtlDelay((int)(SysCtlClockGet()/(motorStepDuration*6000)));	//if we are just jogging then go ahead and move fast
+				if (firstBurnLine==1)
+				{
+					yPulsesBurnedCount++;	//keep track of the number of +y pulses sent
+				}
+				if (yPulsesBurnedCount%19==0)	//when its time to correct the x position...
+				{
+					//set the x stepper motor direction to reverse
+					GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, GPIO_PIN_1);
+					//set the clock output high - the motor steps on rising clock edges
+					GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_2, GPIO_PIN_2);
+					//wait a certain amount of time before changing the stepper motor clock state
+					if (burnDuration!=0)	//if we are burning and not just moving
+						SysCtlDelay((int)((SysCtlClockGet()*burnDuration)/(6000*pulsesPerPixel)));	//pulse high for half the duration of 1/12th of the pixel width
+					else 
+						SysCtlDelay((int)(SysCtlClockGet()/(motorStepDuration*6000)));	//if we are just jogging then go ahead and move fast
+					//Set the clock output low
+					GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_2, 0);
+					//wait a certain amount of time before changing the stepper motor clock state
+					if (burnDuration!=0)	//if we are burning and not just moving
+						SysCtlDelay((int)((SysCtlClockGet()*burnDuration)/(6000*pulsesPerPixel)));	//pulse high for half the duration of 1/12th of the pixel width
+					else 
+						SysCtlDelay((int)(SysCtlClockGet()/(motorStepDuration*6000)));	//if we are just jogging then go ahead and move fast
+					correctionPulsesSent++;
+				}
 				/*if (openLoopCountTrigger==1)
 					openLoopCorrectionCount++;
 				if (openLoopCorrectionCount%26==0 && openLoopCorrectionCount!=0)
@@ -768,9 +752,9 @@ void engrave()
 					//correctPlacement(positiveXPixels, positiveYPixels);	//Use the encoders to make sure we jogged to the correct location
  					xCommandsIndex++;	//move the pointer to the next x location
  					yCommandsIndex++;	//move the pointer to the next y location
-					j+=4;	//point to the first pixel
-					dwell(pauseValues[pauseValuesIndex]);	//dwell the amount of time indicated by the first G4
-					pauseValuesIndex++;	//update the pause value index
+					j+=2;	//point to the first pixel
+					dwell(40);	//dwell the amount of time indicated by the first G4
+					//pauseValuesIndex++;	//update the pause value index
 					pixelsCount=0;
  				}
 				else if (gCode[j]=='M' && gCode[j+1]=='2')	//If we got the command to jog to the origin (end of picture)
@@ -782,56 +766,77 @@ void engrave()
  				{
 					if(gCode[j+2]=='S')	//first get the intensity and burn duration
 					{
-						switch(gCode[j+3])	//get the intensity level and turn on the laser at the specified intensity
+						firstBurnLine=1;	//*ADDED* trip the flag to start correction moves
+						burnTime=gCode[j+3];
+						//zephyr=(short)((float)minBurnVal+((float)difference)*((255-burnTime)/255.0));
+						zephyr=(short)((float)minBurnVal+((float)difference)*((255-burnTime)/255.0));
+						PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,zephyr);
+						/*switch(gCode[j+3])	//get the intensity level and turn on the laser at the specified intensity
 						{
  						case '0':
 							PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,479);
-							zephyr=60;//30;//60
+							zephyr=22;//30;//60---->38
  							break;
  						case '1':
  							PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,479);//410
-							zephyr=41;//18;//41
+							zephyr=13;//18;//41---->30
  							break;
  						case '2':
  							PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,479);//353
-						zephyr=32;//15;//32
+						zephyr=10;//15;//32---->25 10
  							break;
  						case '3':
  							PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,479);//300
-						zephyr=24;//13;//24
+						zephyr=9;//13;//24---->22 9
  							break;
 						case '4':
  							PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,479);//220
-						zephyr=18;//10;//18
+						zephyr=7;//10;//18---->19 7
  							break;
  						case '5':
  							PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,479);//163
-						zephyr=14;//8;//14
+						zephyr=5;//8;//14---->15
  							break;
  						case '6':
  							PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,479);//135
-						zephyr=12;//5;//12
+						zephyr=4;//5;//12---->12
  							break;
  						case '7':
  							PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,1);
-						zephyr=5;//10
+						zephyr=3;//10
  							break;
  						default:
  							//DO NOTHING
  							break;
-						}//end of switch
-					}//end of if
-					j+=6;	//go find the G4 for this pixel
-				}
-				else if (gCode[j]=='G' && gCode[j+1]=='4')	//when we know the burn duration...
-				{
-					burnDurVal=pauseValues[pauseValuesIndex];	//grab the burn duration from pauseValues
-					pauseValuesIndex++; //move the pointer for the next pause value
-					step(positiveXPixels, positiveYPixels, xCommands[xCommandsIndex], yCommands[yCommandsIndex], zephyr); //move over the pixel while burning it at the specified intensity
-					xCommandsIndex++;	//move the pointer to the next x location
- 					yCommandsIndex++;	//move the pointer to the next y location
-					PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,1);	//turn the laser off
-					j+=4;	//point to the start of the next gCode pixel
+						}//end of switch*/
+						//}//end of if
+						//burnDurVal=pauseValues[pauseValuesIndex];	//grab the burn duration from pauseValues
+						//pauseValuesIndex++; //move the pointer for the next pause value
+						//if (zephyr <= minBurnVal)
+						{
+							//PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,1);
+						}
+						//else
+						{
+							//PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,479);
+						}
+						if (255-burnTime>235)
+						{
+							step(positiveXPixels, positiveYPixels, xCommands[xCommandsIndex], yCommands[yCommandsIndex], 30); //move over the pixel while burning it at the specified intensity 8
+						}
+						/*else if (255-burnTime>190)
+						{
+							step(positiveXPixels, positiveYPixels, xCommands[xCommandsIndex], yCommands[yCommandsIndex], 8); //move over the pixel while burning it at the specified intensity
+						}*/
+						else
+						{
+							step(positiveXPixels, positiveYPixels, xCommands[xCommandsIndex], yCommands[yCommandsIndex], 3); //move over the pixel while burning it at the specified intensity 6
+						}
+						xCommandsIndex++;	//move the pointer to the next x location
+						yCommandsIndex++;	//move the pointer to the next y location
+						PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0,1);	//turn the laser off
+						j+=4;	//point to the start of the next gCode pixel
+					}
 				}
 				else if (gCode[j]=='R' && gCode[j+1]=='D')
 				{
@@ -841,11 +846,11 @@ void engrave()
 		pixelsCount=0;
 		pixelCorrectX=0;
 		pixelCorrectY=0;
- 		for (i=0;i<1612;i++)
+ 		for (i=0;i<2410;i++)
  		{
  			xCommands[i]='\0';
  			yCommands[i]='\0';
- 			pauseValues[i]='\0';
+ 			//pauseValues[i]='\0';
  		}
  		for (i=0;i<16012;i++)
  		{
@@ -1031,7 +1036,7 @@ int main(void)
 	PWM_Setup();
 	QEI_Setup();
 	GPIO_Setup();
-	
+	difference=maxBurnVal-minBurnVal;
 	while(1)
 	{
  		if(readyToGo==1 && rowGood==1)
@@ -1044,12 +1049,11 @@ int main(void)
 			pixelsCount=0;
 			pixelCorrectX=0;
 			pixelCorrectY=0;
-			// memset((void *) xCommands, '\0', sizeof(xCommands));
-			for (i=0;i<1612;i++)
+			for (i=0;i<2410;i++)
 			{
 				xCommands[i]='\0';
 				yCommands[i]='\0';
-				pauseValues[i]='\0';
+				//pauseValues[i]='\0';
 			}
 			for (i=0;i<16012;i++)
 			{

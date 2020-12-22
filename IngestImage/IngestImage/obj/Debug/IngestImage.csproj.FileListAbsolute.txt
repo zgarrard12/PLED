@@ -10,3 +10,10 @@ C:\Users\Casey\Documents\USU\PLED\PLED\IngestImage\IngestImage\obj\Debug\IngestI
 C:\Users\Casey\Documents\USU\PLED\PLED\IngestImage\IngestImage\bin\Debug\IngestImage.exe
 C:\Users\Casey\Documents\USU\PLED\PLED\IngestImage\IngestImage\bin\Debug\IngestImage.pdb
 C:\Users\Casey\Documents\USU\PLED\PLED\IngestImage\IngestImage\obj\Debug\IngestImage.csprojResolveAssemblyReference.cache
+C:\Users\Zach&Bre\Documents\PLED\PLED\IngestImage\IngestImage\bin\Debug\IngestImage.exe.config
+C:\Users\Zach&Bre\Documents\PLED\PLED\IngestImage\IngestImage\bin\Debug\IngestImage.exe
+C:\Users\Zach&Bre\Documents\PLED\PLED\IngestImage\IngestImage\bin\Debug\IngestImage.pdb
+C:\Users\Zach&Bre\Documents\PLED\PLED\IngestImage\IngestImage\obj\Debug\IngestImage.csprojResolveAssemblyReference.cache
+C:\Users\Zach&Bre\Documents\PLED\PLED\IngestImage\IngestImage\obj\Debug\IngestImage.csproj.CoreCompileInputs.cache
+C:\Users\Zach&Bre\Documents\PLED\PLED\IngestImage\IngestImage\obj\Debug\IngestImage.exe
+C:\Users\Zach&Bre\Documents\PLED\PLED\IngestImage\IngestImage\obj\Debug\IngestImage.pdb
