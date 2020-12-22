@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\SP.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\SP.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Sat Jan 07 14:14:20 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Dec 22 00:01:19 2020
 <BR><P>
 <H3>Maximum Stack Usage =        128 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -342,26 +342,28 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
-<P><STRONG><a name="[125]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
+<P><STRONG><a name="[125]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
 
-<P><STRONG><a name="[126]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
+<P><STRONG><a name="[126]"></a>__rt_lib_shutdown_fini_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
 
-<P><STRONG><a name="[127]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
+<P><STRONG><a name="[127]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000009))
 
-<P><STRONG><a name="[128]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
+<P><STRONG><a name="[128]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000011))
 
-<P><STRONG><a name="[129]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
+<P><STRONG><a name="[129]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000012))
 
-<P><STRONG><a name="[12a]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
+<P><STRONG><a name="[12a]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
-<P><STRONG><a name="[12b]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
+<P><STRONG><a name="[12b]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000006))
+
+<P><STRONG><a name="[12c]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E))
 
 <P><STRONG><a name="[7f]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 </UL>
 
-<P><STRONG><a name="[12c]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+<P><STRONG><a name="[12d]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
 <P><STRONG><a name="[83]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -374,7 +376,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
-<P><STRONG><a name="[12d]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+<P><STRONG><a name="[12e]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[87]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
@@ -384,7 +386,7 @@ Global Symbols
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[12e]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
+<P><STRONG><a name="[12f]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
 <P><STRONG><a name="[ff]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -394,7 +396,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
-<P><STRONG><a name="[12f]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+<P><STRONG><a name="[130]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
 <P><STRONG><a name="[8c]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
@@ -416,9 +418,9 @@ Global Symbols
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Handler
 </UL>
 
-<P><STRONG><a name="[130]"></a>CPUcpsid</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, cpu.o(.emb_text), UNUSED)
+<P><STRONG><a name="[131]"></a>CPUcpsid</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, cpu.o(.emb_text), UNUSED)
 
-<P><STRONG><a name="[131]"></a>CPUprimask</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cpu.o(.emb_text), UNUSED)
+<P><STRONG><a name="[132]"></a>CPUprimask</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cpu.o(.emb_text), UNUSED)
 
 <P><STRONG><a name="[100]"></a>CPUcpsie</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, cpu.o(.emb_text))
 <BR><BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntMasterEnable
@@ -429,9 +431,9 @@ Global Symbols
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlSleep
 </UL>
 
-<P><STRONG><a name="[132]"></a>CPUbasepriSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cpu.o(.emb_text), UNUSED)
+<P><STRONG><a name="[133]"></a>CPUbasepriSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cpu.o(.emb_text), UNUSED)
 
-<P><STRONG><a name="[133]"></a>CPUbasepriGet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cpu.o(.emb_text), UNUSED)
+<P><STRONG><a name="[134]"></a>CPUbasepriGet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cpu.o(.emb_text), UNUSED)
 
 <P><STRONG><a name="[12]"></a>UART1_Handler</STRONG> (Thumb, 1378 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = UART1_Handler &rArr; SysCtlClockGet
@@ -527,7 +529,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;engrave
 </UL>
 
-<P><STRONG><a name="[134]"></a>correctPlacement</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(.text), UNUSED)
+<P><STRONG><a name="[135]"></a>correctPlacement</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(.text), UNUSED)
 
 <P><STRONG><a name="[b8]"></a>step</STRONG> (Thumb, 1082 bytes, Stack size 32 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = step &rArr; SysCtlClockGet
@@ -631,13 +633,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Setup
 </UL>
 
-<P><STRONG><a name="[135]"></a>PWMGenPeriodGet</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[136]"></a>PWMGenPeriodGet</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
 <P><STRONG><a name="[a0]"></a>PWMGenEnable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, pwm.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Setup
 </UL>
 
-<P><STRONG><a name="[136]"></a>PWMGenDisable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[137]"></a>PWMGenDisable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
 <P><STRONG><a name="[9e]"></a>PWMPulseWidthSet</STRONG> (Thumb, 38 bytes, Stack size 12 bytes, pwm.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = PWMPulseWidthSet
@@ -648,25 +650,25 @@ Global Symbols
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Setup
 </UL>
 
-<P><STRONG><a name="[137]"></a>PWMPulseWidthGet</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[138]"></a>PWMPulseWidthGet</STRONG> (Thumb, 40 bytes, Stack size 12 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[138]"></a>PWMDeadBandEnable</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[139]"></a>PWMDeadBandEnable</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[139]"></a>PWMDeadBandDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[13a]"></a>PWMDeadBandDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[13a]"></a>PWMSyncUpdate</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[13b]"></a>PWMSyncUpdate</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[13b]"></a>PWMSyncTimeBase</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[13c]"></a>PWMSyncTimeBase</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
 <P><STRONG><a name="[9f]"></a>PWMOutputState</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pwm.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Setup
 </UL>
 
-<P><STRONG><a name="[13c]"></a>PWMOutputInvert</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[13d]"></a>PWMOutputInvert</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[13d]"></a>PWMOutputFaultLevel</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[13e]"></a>PWMOutputFaultLevel</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[13e]"></a>PWMOutputFault</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[13f]"></a>PWMOutputFault</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
 <P><STRONG><a name="[c7]"></a>PWMGenIntRegister</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, pwm.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntRegister
@@ -692,55 +694,55 @@ Global Symbols
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_PWMFaultIntNumberGet
 </UL>
 
-<P><STRONG><a name="[13f]"></a>PWMGenIntTrigEnable</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[140]"></a>PWMGenIntTrigEnable</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[140]"></a>PWMGenIntTrigDisable</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[141]"></a>PWMGenIntTrigDisable</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[141]"></a>PWMGenIntStatus</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[142]"></a>PWMGenIntStatus</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[142]"></a>PWMGenIntClear</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[143]"></a>PWMGenIntClear</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[143]"></a>PWMIntEnable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[144]"></a>PWMIntEnable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[144]"></a>PWMIntDisable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[145]"></a>PWMIntDisable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[145]"></a>PWMFaultIntClear</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[146]"></a>PWMFaultIntClear</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[146]"></a>PWMIntStatus</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[147]"></a>PWMIntStatus</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[147]"></a>PWMFaultIntClearExt</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[148]"></a>PWMFaultIntClearExt</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[148]"></a>PWMGenFaultConfigure</STRONG> (Thumb, 20 bytes, Stack size 12 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[149]"></a>PWMGenFaultConfigure</STRONG> (Thumb, 20 bytes, Stack size 12 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[149]"></a>PWMGenFaultTriggerSet</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[14a]"></a>PWMGenFaultTriggerSet</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[14a]"></a>PWMGenFaultTriggerGet</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[14b]"></a>PWMGenFaultTriggerGet</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[14b]"></a>PWMGenFaultStatus</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[14c]"></a>PWMGenFaultStatus</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[14c]"></a>PWMGenFaultClear</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[14d]"></a>PWMGenFaultClear</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[14d]"></a>PWMClockSet</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[14e]"></a>PWMClockSet</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[14e]"></a>PWMClockGet</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[14f]"></a>PWMClockGet</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[14f]"></a>PWMOutputUpdateMode</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, pwm.o(.text), UNUSED)
+<P><STRONG><a name="[150]"></a>PWMOutputUpdateMode</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, pwm.o(.text), UNUSED)
 
-<P><STRONG><a name="[150]"></a>SysCtlSRAMSizeGet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[151]"></a>SysCtlSRAMSizeGet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[151]"></a>SysCtlFlashSizeGet</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[152]"></a>SysCtlFlashSizeGet</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[152]"></a>SysCtlFlashSectorSizeGet</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[153]"></a>SysCtlFlashSectorSizeGet</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[153]"></a>SysCtlPeripheralPresent</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[154]"></a>SysCtlPeripheralPresent</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[154]"></a>SysCtlPeripheralReady</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[155]"></a>SysCtlPeripheralReady</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[155]"></a>SysCtlPeripheralPowerOn</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[156]"></a>SysCtlPeripheralPowerOn</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[156]"></a>SysCtlPeripheralPowerOff</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[157]"></a>SysCtlPeripheralPowerOff</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[157]"></a>SysCtlPeripheralReset</STRONG> (Thumb, 106 bytes, Stack size 12 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[158]"></a>SysCtlPeripheralReset</STRONG> (Thumb, 106 bytes, Stack size 12 bytes, sysctl.o(.text), UNUSED)
 
 <P><STRONG><a name="[99]"></a>SysCtlPeripheralEnable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SysCtlPeripheralEnable
@@ -753,17 +755,17 @@ Global Symbols
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Setup
 </UL>
 
-<P><STRONG><a name="[158]"></a>SysCtlPeripheralDisable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[159]"></a>SysCtlPeripheralDisable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[159]"></a>SysCtlPeripheralSleepEnable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[15a]"></a>SysCtlPeripheralSleepEnable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[15a]"></a>SysCtlPeripheralSleepDisable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[15b]"></a>SysCtlPeripheralSleepDisable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[15b]"></a>SysCtlPeripheralDeepSleepEnable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[15c]"></a>SysCtlPeripheralDeepSleepEnable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[15c]"></a>SysCtlPeripheralDeepSleepDisable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[15d]"></a>SysCtlPeripheralDeepSleepDisable</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[15d]"></a>SysCtlPeripheralClockGating</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[15e]"></a>SysCtlPeripheralClockGating</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
 <P><STRONG><a name="[d0]"></a>SysCtlIntRegister</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntRegister
@@ -775,27 +777,27 @@ Global Symbols
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntDisable
 </UL>
 
-<P><STRONG><a name="[15e]"></a>SysCtlIntEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[15f]"></a>SysCtlIntEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[15f]"></a>SysCtlIntDisable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[160]"></a>SysCtlIntDisable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[160]"></a>SysCtlIntClear</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[161]"></a>SysCtlIntClear</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[161]"></a>SysCtlIntStatus</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[162]"></a>SysCtlIntStatus</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[162]"></a>SysCtlLDOSleepSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[163]"></a>SysCtlLDOSleepSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[163]"></a>SysCtlLDOSleepGet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[164]"></a>SysCtlLDOSleepGet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[164]"></a>SysCtlLDODeepSleepSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[165]"></a>SysCtlLDODeepSleepSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[165]"></a>SysCtlLDODeepSleepGet</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[166]"></a>SysCtlLDODeepSleepGet</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[166]"></a>SysCtlSleepPowerSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[167]"></a>SysCtlSleepPowerSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[167]"></a>SysCtlDeepSleepPowerSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[168]"></a>SysCtlDeepSleepPowerSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[168]"></a>SysCtlReset</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[169]"></a>SysCtlReset</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
 <P><STRONG><a name="[d2]"></a>SysCtlSleep</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPUwfi
@@ -805,17 +807,17 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPUwfi
 </UL>
 
-<P><STRONG><a name="[169]"></a>SysCtlResetCauseGet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[16a]"></a>SysCtlResetCauseGet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[16a]"></a>SysCtlResetCauseClear</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[16b]"></a>SysCtlResetCauseClear</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[16b]"></a>SysCtlMOSCConfigSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[16c]"></a>SysCtlMOSCConfigSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[16c]"></a>SysCtlPIOSCCalibrate</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[16d]"></a>SysCtlPIOSCCalibrate</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[16d]"></a>SysCtlResetBehaviorSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[16e]"></a>SysCtlResetBehaviorSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[16e]"></a>SysCtlResetBehaviorGet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[16f]"></a>SysCtlResetBehaviorGet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
 <P><STRONG><a name="[d5]"></a>SysCtlClockFreqSet</STRONG> (Thumb, 646 bytes, Stack size 48 bytes, sysctl.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SysCtlFrequencyGet
@@ -846,47 +848,47 @@ Global Symbols
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Handler
 </UL>
 
-<P><STRONG><a name="[16f]"></a>SysCtlDeepSleepClockSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[170]"></a>SysCtlDeepSleepClockSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[170]"></a>SysCtlDeepSleepClockConfigSet</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[171]"></a>SysCtlDeepSleepClockConfigSet</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, sysctl.o(.text), UNUSED)
 
 <P><STRONG><a name="[98]"></a>SysCtlPWMClockSet</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, sysctl.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Setup
 </UL>
 
-<P><STRONG><a name="[171]"></a>SysCtlPWMClockGet</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[172]"></a>SysCtlPWMClockGet</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[172]"></a>SysCtlGPIOAHBEnable</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[173]"></a>SysCtlGPIOAHBEnable</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[173]"></a>SysCtlGPIOAHBDisable</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[174]"></a>SysCtlGPIOAHBDisable</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[174]"></a>SysCtlUSBPLLEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[175]"></a>SysCtlUSBPLLEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[175]"></a>SysCtlUSBPLLDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[176]"></a>SysCtlUSBPLLDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[176]"></a>SysCtlVoltageEventConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[177]"></a>SysCtlVoltageEventConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[177]"></a>SysCtlVoltageEventStatus</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[178]"></a>SysCtlVoltageEventStatus</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[178]"></a>SysCtlVoltageEventClear</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[179]"></a>SysCtlVoltageEventClear</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[179]"></a>SysCtlNMIStatus</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[17a]"></a>SysCtlNMIStatus</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[17a]"></a>SysCtlNMIClear</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[17b]"></a>SysCtlNMIClear</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[17b]"></a>SysCtlClockOutConfig</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[17c]"></a>SysCtlClockOutConfig</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[17c]"></a>SysCtlAltClkConfig</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
+<P><STRONG><a name="[17d]"></a>SysCtlAltClkConfig</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sysctl.o(.text), UNUSED)
 
-<P><STRONG><a name="[17d]"></a>UARTParityModeSet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[17e]"></a>UARTParityModeSet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[17e]"></a>UARTParityModeGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[17f]"></a>UARTParityModeGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[a8]"></a>UARTFIFOLevelSet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Setup
 </UL>
 
-<P><STRONG><a name="[17f]"></a>UARTFIFOLevelGet</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[180]"></a>UARTFIFOLevelGet</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[ac]"></a>UARTEnable</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTConfigSetExpClk
@@ -906,43 +908,43 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Setup
 </UL>
 
-<P><STRONG><a name="[180]"></a>UARTConfigGetExpClk</STRONG> (Thumb, 44 bytes, Stack size 20 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[181]"></a>UARTConfigGetExpClk</STRONG> (Thumb, 44 bytes, Stack size 20 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[a7]"></a>UARTFIFOEnable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Setup
 </UL>
 
-<P><STRONG><a name="[181]"></a>UARTFIFODisable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[182]"></a>UARTFIFODisable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[182]"></a>UARTEnableSIR</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[183]"></a>UARTEnableSIR</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[183]"></a>UARTDisableSIR</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[184]"></a>UARTDisableSIR</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[184]"></a>UARTSmartCardEnable</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[185]"></a>UARTSmartCardEnable</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[185]"></a>UARTSmartCardDisable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[186]"></a>UARTSmartCardDisable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[186]"></a>UARTModemControlSet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[187]"></a>UARTModemControlSet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[187]"></a>UARTModemControlClear</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[188]"></a>UARTModemControlClear</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[188]"></a>UARTModemControlGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[189]"></a>UARTModemControlGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[189]"></a>UARTModemStatusGet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[18a]"></a>UARTModemStatusGet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[a9]"></a>UARTFlowControlSet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Setup
 </UL>
 
-<P><STRONG><a name="[18a]"></a>UARTFlowControlGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[18b]"></a>UARTFlowControlGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[18b]"></a>UARTTxIntModeSet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[18c]"></a>UARTTxIntModeSet</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[18c]"></a>UARTTxIntModeGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[18d]"></a>UARTTxIntModeGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[18d]"></a>UARTCharsAvail</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[18e]"></a>UARTCharsAvail</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[18e]"></a>UARTSpaceAvail</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[18f]"></a>UARTSpaceAvail</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[bf]"></a>UARTCharGetNonBlocking</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -953,7 +955,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Handler
 </UL>
 
-<P><STRONG><a name="[18f]"></a>UARTCharPutNonBlocking</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[190]"></a>UARTCharPutNonBlocking</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[94]"></a>UARTCharPut</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -961,9 +963,9 @@ Global Symbols
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Handler
 </UL>
 
-<P><STRONG><a name="[190]"></a>UARTBreakCtl</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[191]"></a>UARTBreakCtl</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[191]"></a>UARTBusy</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[192]"></a>UARTBusy</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[d9]"></a>UARTIntRegister</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, uart.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_UARTIntNumberGet
@@ -981,7 +983,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Setup
 </UL>
 
-<P><STRONG><a name="[192]"></a>UARTIntDisable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[193]"></a>UARTIntDisable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[8f]"></a>UARTIntStatus</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Handler
@@ -991,11 +993,11 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Handler
 </UL>
 
-<P><STRONG><a name="[193]"></a>UARTDMAEnable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[194]"></a>UARTDMAEnable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[194]"></a>UARTDMADisable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[195]"></a>UARTDMADisable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[195]"></a>UARTRxErrorGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[196]"></a>UARTRxErrorGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[91]"></a>UARTRxErrorClear</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1007,15 +1009,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_Setup
 </UL>
 
-<P><STRONG><a name="[196]"></a>UARTClockSourceGet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[197]"></a>UARTClockSourceGet</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[197]"></a>UART9BitEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[198]"></a>UART9BitEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[198]"></a>UART9BitDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[199]"></a>UART9BitDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[199]"></a>UART9BitAddrSet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[19a]"></a>UART9BitAddrSet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
-<P><STRONG><a name="[19a]"></a>UART9BitAddrSend</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[19b]"></a>UART9BitAddrSend</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
 
 <P><STRONG><a name="[e0]"></a>GPIODirModeSet</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPinTypeCIR
@@ -1049,11 +1051,11 @@ Global Symbols
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPinTypeGPIOOutput
 </UL>
 
-<P><STRONG><a name="[19b]"></a>GPIODirModeGet</STRONG> (Thumb, 46 bytes, Stack size 12 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[19c]"></a>GPIODirModeGet</STRONG> (Thumb, 46 bytes, Stack size 12 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[19c]"></a>GPIOIntTypeSet</STRONG> (Thumb, 102 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[19d]"></a>GPIOIntTypeSet</STRONG> (Thumb, 102 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[19d]"></a>GPIOIntTypeGet</STRONG> (Thumb, 84 bytes, Stack size 20 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[19e]"></a>GPIOIntTypeGet</STRONG> (Thumb, 84 bytes, Stack size 20 bytes, gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[b3]"></a>GPIOPadConfigSet</STRONG> (Thumb, 342 bytes, Stack size 20 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = GPIOPadConfigSet
@@ -1091,15 +1093,15 @@ Global Symbols
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Setup
 </UL>
 
-<P><STRONG><a name="[19e]"></a>GPIOPadConfigGet</STRONG> (Thumb, 206 bytes, Stack size 20 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[19f]"></a>GPIOPadConfigGet</STRONG> (Thumb, 206 bytes, Stack size 20 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[19f]"></a>GPIOIntEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a0]"></a>GPIOIntEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a0]"></a>GPIOIntDisable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a1]"></a>GPIOIntDisable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a1]"></a>GPIOIntStatus</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a2]"></a>GPIOIntStatus</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a2]"></a>GPIOIntClear</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a3]"></a>GPIOIntClear</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[dc]"></a>GPIOIntRegister</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, gpio.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GPIOIntNumberGet
@@ -1113,7 +1115,7 @@ Global Symbols
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntDisable
 </UL>
 
-<P><STRONG><a name="[1a3]"></a>GPIOPinRead</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a4]"></a>GPIOPinRead</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[b9]"></a>GPIOPinWrite</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;testBenchMotor
@@ -1285,7 +1287,7 @@ Global Symbols
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPadConfigSet
 </UL>
 
-<P><STRONG><a name="[1a4]"></a>GPIOPinWakeStatus</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a5]"></a>GPIOPinWakeStatus</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[9a]"></a>GPIOPinConfigure</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIOPinConfigure
@@ -1295,13 +1297,13 @@ Global Symbols
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Setup
 </UL>
 
-<P><STRONG><a name="[1a5]"></a>GPIODMATriggerEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a6]"></a>GPIODMATriggerEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a6]"></a>GPIODMATriggerDisable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a7]"></a>GPIODMATriggerDisable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a7]"></a>GPIOADCTriggerEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a8]"></a>GPIOADCTriggerEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a8]"></a>GPIOADCTriggerDisable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
+<P><STRONG><a name="[1a9]"></a>GPIOADCTriggerDisable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[b1]"></a>QEIEnable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, qei.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QEI_Setup
@@ -1320,19 +1322,19 @@ Global Symbols
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;step
 </UL>
 
-<P><STRONG><a name="[1a9]"></a>QEIPositionSet</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1aa]"></a>QEIPositionSet</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1aa]"></a>QEIDirectionGet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1ab]"></a>QEIDirectionGet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ab]"></a>QEIErrorGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1ac]"></a>QEIErrorGet</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ac]"></a>QEIVelocityEnable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1ad]"></a>QEIVelocityEnable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ad]"></a>QEIVelocityDisable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1ae]"></a>QEIVelocityDisable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ae]"></a>QEIVelocityConfigure</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1af]"></a>QEIVelocityConfigure</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1af]"></a>QEIVelocityGet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1b0]"></a>QEIVelocityGet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
 <P><STRONG><a name="[f9]"></a>QEIIntRegister</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, qei.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_QEIIntNumberGet
@@ -1346,35 +1348,35 @@ Global Symbols
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntDisable
 </UL>
 
-<P><STRONG><a name="[1b0]"></a>QEIIntEnable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1b1]"></a>QEIIntEnable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b1]"></a>QEIIntDisable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1b2]"></a>QEIIntDisable</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b2]"></a>QEIIntStatus</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1b3]"></a>QEIIntStatus</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b3]"></a>QEIIntClear</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
+<P><STRONG><a name="[1b4]"></a>QEIIntClear</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, qei.o(.text), UNUSED)
 
 <P><STRONG><a name="[c5]"></a>FPUEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, fpu.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[1b4]"></a>FPUDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
+<P><STRONG><a name="[1b5]"></a>FPUDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
 
 <P><STRONG><a name="[c6]"></a>FPUStackingEnable</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fpu.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[1b5]"></a>FPULazyStackingEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
+<P><STRONG><a name="[1b6]"></a>FPULazyStackingEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b6]"></a>FPUStackingDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
+<P><STRONG><a name="[1b7]"></a>FPUStackingDisable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b7]"></a>FPUHalfPrecisionModeSet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
+<P><STRONG><a name="[1b8]"></a>FPUHalfPrecisionModeSet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b8]"></a>FPUNaNModeSet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
+<P><STRONG><a name="[1b9]"></a>FPUNaNModeSet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b9]"></a>FPUFlushToZeroModeSet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
+<P><STRONG><a name="[1ba]"></a>FPUFlushToZeroModeSet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ba]"></a>FPURoundingModeSet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
+<P><STRONG><a name="[1bb]"></a>FPURoundingModeSet</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, fpu.o(.text), UNUSED)
 
 <P><STRONG><a name="[7b]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_tm4c123.o(.text))
 
@@ -2201,11 +2203,11 @@ Global Symbols
 <P><STRONG><a name="[78]"></a>SystemInit</STRONG> (Thumb, 112 bytes, Stack size 0 bytes, system_tm4c123.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(.text)
 </UL>
-<P><STRONG><a name="[1bb]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[1bc]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[1bc]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[1bd]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[1bd]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[1be]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[84]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -2226,23 +2228,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[1be]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[1bf]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[fe]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[1bf]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[1c0]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[8d]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
-<P><STRONG><a name="[1c0]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[1c1]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c1]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[1c2]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c2]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
+<P><STRONG><a name="[1c3]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[cb]"></a>IntDisable</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, interrupt.o(i.IntDisable), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QEIIntUnregister
@@ -2334,7 +2336,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;testBenchIntensity
 </UL>
 
-<P><STRONG><a name="[1c3]"></a>_dflt</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt), UNUSED)
+<P><STRONG><a name="[1c4]"></a>_dflt</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt), UNUSED)
 
 <P><STRONG><a name="[b5]"></a>__aeabi_ui2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu))
 <BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;testBenchIntensity
@@ -2343,7 +2345,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dwell
 </UL>
 
-<P><STRONG><a name="[1c4]"></a>_dfltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
+<P><STRONG><a name="[1c5]"></a>_dfltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
 
 <P><STRONG><a name="[bd]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_dmul
@@ -2372,7 +2374,7 @@ Global Symbols
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 </UL>
 
-<P><STRONG><a name="[1c5]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
+<P><STRONG><a name="[1c6]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
 
 <P><STRONG><a name="[108]"></a>_dsub</STRONG> (Thumb, 464 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
@@ -2398,9 +2400,9 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_fp_1
 </UL>
 
-<P><STRONG><a name="[1c6]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
+<P><STRONG><a name="[1c7]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 
-<P><STRONG><a name="[1c7]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
+<P><STRONG><a name="[1c8]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 <P>
 <H3>
 Local Symbols
