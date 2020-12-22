@@ -1044,6 +1044,7 @@ int main(void)
 			pixelsCount=0;
 			pixelCorrectX=0;
 			pixelCorrectY=0;
+			// memset((void *) xCommands, '\0', sizeof(xCommands));
 			for (i=0;i<1612;i++)
 			{
 				xCommands[i]='\0';
